@@ -6,14 +6,25 @@
     <title>particles.js demo</title>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    
     <link type="text/css" rel="stylesheet" href="css/style.css">
 
+    <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase.js"></script>
+    <!-- <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase-database.js"></script> -->
+   <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase-firestore.js"></script>
+    <!-- <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase-messaging.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase-functions.js"></script> --> 
+    
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+    </script>
 
 </head>
 
 <body id="particles-js">
-    //
+    
     <nav class="transparent">
         <div class="nav-wrapper">
             <a href="#" class="brand-logo center">
@@ -25,7 +36,7 @@
                 <br>
                 <br>
                 <p class="btn-lg pulse transparent zindex-5">
-                    <h3 style="opacity: 0.4; color: rgb(4, 79, 102);">Super DenS</h3>
+                    <h3 style="opacity: 0.7; color: rgb(4, 79, 102);">Super DenS</h3>
                 </p>
             </a>
             <ul class="right">
@@ -36,6 +47,11 @@
             <ul class="left">
                 <li>
                     <a id="createHero" href="#modal3" class="btn waves-effect waves-light blue-grey darken-4 white-text modal-trigger">Create Hero</a>
+                </li>
+            </ul>
+            <ul class="right">
+                <li>
+                    <a id="modalLoadTrigger" href="#modalLoad" class="btn waves-effect waves-light blue-grey darken-4 white-text modal-trigger">Load Info</a>
                 </li>
             </ul>
         </div>
@@ -76,28 +92,23 @@
         </div>
     </div>
 
+    <!-- //LOAD DATA FUNCTION  -->
+    <div class="modal" id="modalLoad">
+        <div class="modal-content">
+            <h5>Email</h5>
+            <input type="text" placeholder="email" id="loadUser">
+        </div>
+        <div class="modal-fixed-footer grey">
+            <span class="btn waves-effect waves-light" type="submit" name="action" id="userLoadBtn">
+                <h5>Get USER INFO</h5>
+            </span>
+        </div>
+    </div>
+
 
     <footer></footer>
-    <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase.js"></script>
-    <script>
-        // Initialize Firebase
-        var config = {
-            apiKey: "AIzaSyCj-JYjL8Ramk7c7yi385deYuvh2mMqgvc",
-            authDomain: "testing123-647a9.firebaseapp.com",
-            databaseURL: "https://testing123-647a9.firebaseio.com",
-            projectId: "testing123-647a9",
-            storageBucket: "testing123-647a9.appspot.com",
-            messagingSenderId: "464860136095"
-        };
-        firebase.initializeApp(config);
-    </script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
-    </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js">
-    </script>
-    <script src="signIn.js">
-    </script>
 
+      
     <!-- particles.js lib - https://github.com/VincentGarreau/particles.js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
     <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
